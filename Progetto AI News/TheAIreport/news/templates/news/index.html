@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>The AI Report</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'news/style.css' %}">
+</head>
+
+<body>
+  <header>
+    
+    <h1>The AI Reports</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+    <section class="latest">
+      <h2>Latest News</h2>
+      <hr>
+      {% for notizie in news %}
+      <div class="notizie">
+        <h3> {{notizie.titolo}} </h3>
+        <img src = "{{notizie.immagine}}" style="max-width: 200px;" style = "display: flex;">
+        <p> {{notizie.contenuto}} </p>
+        <p> {{notizie.data}} </p>
+        <a href = "{{notizie.link}}"> Visita il Sito </a>
+      </div>
+      <hr>
+      {% endfor %}
+    </section>
+
+  </main>
+  <footer>
+    <p>&copy;Intelligenza Artificiale News</p>
+  </footer>
+</body>
+
+</html>
